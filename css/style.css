@@ -18,22 +18,30 @@ body { font-family: Arial, Helvetica, sans-serif; }
 
 .barred { text-decoration: line-through; }
 
+li { 
+    list-style: none; 
+    display: flex;
+    align-items: center;
+    margin: 0.2rem;
+}
+
 .delete {
     background-color: red;
-    border: none;
     color: white;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
+    padding: 0.2rem, 0.4rem;
+    margin-right: 0.5rem;
     border-radius: 50%;
-    width: 20px;
+    border: none;
+    width: 1rem;
     aspect-ratio: 1;
 }
+
+#check { margin-right: 0.5rem; }
+
 .controls {
     margin: auto;
-    width: 30rem;
+    width: 25rem;
     text-align: center;
 }
 
-button { margin-left: 1rem; }
+#addTask { margin-left: 0.4rem; }
