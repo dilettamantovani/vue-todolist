@@ -20,8 +20,8 @@
             </ul>
         </div>
         <div class="controls">
-            <input @keyup.enter="addTask" type="text" v-model="newTask">
-            <button id="addTask" @click="addTask">Aggiungi attività</button>
+            <input type="text" v-model="newTask">
+            <button id="addTask" @click="addTask()">Aggiungi attività</button>
         </div>
 
     </div>

@@ -46,8 +46,8 @@ createApp({
             this.list.splice(i, 1);
         },
         
-        addTask(element) {
-            element = {task: element, done: false};
+        addTask() {
+            let element = {task: this.newTask, done: false};
             this.list.push(element);
             this.newTask = "";
         }
