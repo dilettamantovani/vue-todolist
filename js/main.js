@@ -6,27 +6,27 @@ createApp({
             list: [
                 {
                     task: "finire l'esercizio",
-                    completed: true
+                    done: false
                 },
                 {
                     task: "seguire lezione",
-                    completed: false
+                    done: false
                 },
                 {
                     task: "cucinare il pranzo",
-                    completed: false
+                    done: false
                 },
                 {
                     task: "andare a fare la spesa",
-                    completed: true
+                    done: false
                 },
                 {
                     task: "svenire nel lettoe",
-                    completed: false
+                    done: false
                 },
                 {
                     task: "andarsi ad allenare",
-                    completed: false
+                    done: false
                 },
 
             ],
@@ -34,22 +34,24 @@ createApp({
         }
     },
     methods: {
-        taskStatus(condition) {
-            return (condition) ? "barred" : "";
+        taskStatus(i) {
+            if(this.list[i].done) {
+                this.list[i].done = false;
+            } else {
+                this.list[i].done = true;
+            }
         },
-        removeTask(index) {
-            this.list.splice(index, 1);
+
+        removeTask(i) {
+            this.list.splice(i, 1);
         },
-        toggleCompletion(index) {
-            this.list[index].completed = !this.list[index].completed
-        },
-        addTask() {
-            this.list.push({task: this.newTask, completed: false})
-        if (this.newTask == "") {
-            this.list.pop({task: this.newTask, completed: false})
-        }
-        this.newTask = ""
         
+        addTask(element) {
+            element = {task: element, done: false};
+            this.list.push(element);
+            this.newTask = "";
         }
+        
     }
+
 }).mount("#app")
